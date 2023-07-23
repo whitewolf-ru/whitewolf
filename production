@@ -1,0 +1,13 @@
+
+В файле package.json, добавить запись к пути вашего сайта, например так:
+
+"homepage":  "http://somesite.ru/subfolder/",
+ 
+npm run build
+
+Чтобы работала маршрутизация нужно добавить в файл .htaccess следующий код:
+
+Options -MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [QSA,L]
